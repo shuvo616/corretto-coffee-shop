@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <!-- font awesome cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- tailwind output css -->
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="h-screen bg-cover bg-no-repeat bg-center"
+        style="background-image: url(images/home-1-slider-image-2.jpg);">
+        <!-- nav -->
+        <nav class="container flex justify-between items-center py-4">
+            <!-- logo -->
+            <div class="py-5 text-yellow-900 font-bold text-3xl">
+                <a href="#home">
+                    <img src="images/logo-light.png" alt="logo" class="w-auto h-16">
+                </a>
+            </div>
+            <!-- menu for big screen-->
+            <div>
+                <ul class="hidden lg:flex items-center space-x-6">
+                    <li><a href="#home"
+                            class="text-white text-lg font-bold hover:text-orange-900 ease-in duration-200">Home</a>
+                    </li>
+                    <li><a href="#coffee"
+                            class="text-white text-lg font-bold hover:text-orange-900 ease-in duration-200">Menu</a>
+                    </li>
+                    <li><a href="#blog"
+                            class="text-white text-lg font-bold hover:text-orange-900 ease-in duration-200">Blog</a>
+                    </li>
+                    <li><a href="#shop"
+                            class="text-white text-lg font-bold hover:text-orange-900 ease-in duration-200">Shop</a>
+                    </li>
+                    <li><a href="#gallery"
+                            class="text-white text-lg font-bold hover:text-orange-900 ease-in duration-200">Gallery</a>
+                    </li>
+                    <li><a href="#contact"
+                            class="text-white text-lg font-bold hover:text-orange-900 ease-in duration-200">Contact</a>
+                    </li>
+
+                    <!-- icon for big screen-->
+                    <div class="flex items-center space-x-6">
+                        <a href="#" class="text-center text-gray-700 relative">
+                            <div class="text-2xl text-gray-200">
+                                <i class="fas fa-cart-shopping"></i>
+                            </div>
+                            <span
+                                class="absolute -right-2 -top-2 h-5 w-5 rounded-full flex items-center justify-center bg-red-500 text-white text-sm">2</span>
+                        </a>
+                        <a href="#" class="text-center text-gray-700 relative">
+                            <div class="text-2xl text-gray-200">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <span
+                                class="absolute -right-2 -top-2 h-5 w-5 rounded-full flex items-center justify-center bg-red-500 text-white text-sm">5</span>
+                        </a>
+                        <a href="#" class="text-center text-gray-700">
+                            <div class="text-2xl text-gray-200">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </a>
+                    </div>
+                </ul>
+
+            </div>
+            <!-- Hamburger menu for mobile -->
+            <div id="hamburger" class="lg:hidden cursor-pointer z-50 text-gray-200">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="menu" class="hidden bg-[#BE9C79] h-[100vh] absolute inset-0">
+                <ul class="h-full grid place-items-center py-20">
+                    <li><a id="hLink" href="#home"
+                            class="text-white text-lg font-bold hover:text-orange-900 ease-in duration-200">Home</a>
+                    </li>
+                    <li><a id="hLink" href="#coffee"
+                            class="text-white text-lg font-bold hover:text-orange-900 ease-in duration-200">Menu</a>
+                    </li>
+                    <li><a id="hLink" href="#blog"
+                            class="text-white text-lg font-bold hover:text-orange-900 ease-in duration-200">Blog</a>
+                    </li>
+                    <li><a id="hLink" href="#shop"
+                            class="text-white text-lg font-bold hover:text-orange-900 ease-in duration-200">Shop</a>
+                    </li>
+                    <li><a id="hLink" href="#gallert"
+                            class="text-white text-lg font-bold hover:text-orange-900 ease-in duration-200">Gallery</a>
+                    </li>
+                    <li><a id="hLink" href="#contact"
+                            class="text-white text-lg font-bold hover:text-orange-900 ease-in duration-200">Contact</a>
+                    </li>
+
+                    <!-- icon for small screen-->
+                    <div class="flex items-center space-x-6">
+                        <a href="#" class="text-center text-gray-700 relative">
+                            <div class="text-2xl text-gray-200">
+                                <i class="fas fa-cart-shopping"></i>
+                            </div>
+                            <span
+                                class="absolute -right-2 -top-2 h-5 w-5 rounded-full flex items-center justify-center bg-red-500 text-white text-sm">2</span>
+                        </a>
+                        <a href="#" class="text-center text-gray-700 relative">
+                            <div class="text-2xl text-gray-200">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <span
+                                class="absolute -right-2 -top-2 h-5 w-5 rounded-full flex items-center justify-center bg-red-500 text-white text-sm">5</span>
+                        </a>
+                        <a href="#" class="text-center text-gray-700">
+                            <div class="text-2xl text-gray-200">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </a>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+        <!-- Header content -->
+        <div class="flex items-center justify-center lg:justify-end mt-6">
+            <div class="lg:w-1/2 space-y-6 flex flex-col items-center h-auto">
+                <div>
+                    <img src="images/h1-single-img-1-250x226.png" alt="coffee" class="w-14 md:w-24">
+                </div>
+                <h1 class="text-white text-4xl md:text-5xl font-bold text-center">Coffee Heaven</h1>
+                <div>
+                    <img src="images/title-separator.png" alt="">
+                </div>
+                <div>
+                    <p class="text-base text-white text-center px-3">Lorem ipsum dolor sit amet,
+                        consectetur
+                        adipisicing
+                        elit. Molestias
+                        explicabo necessitatibus illum quidem fuga corrupti vitae, nisi voluptatum dolores.</p>
+                </div>
+                <div class="pt-5">
+                    <a href="#shop"
+                        class="py-5 px-12 bg-transparent border border-gray-200 text-lg text-white hover:bg-gray-300 hover:text-yellow-950 uppercase mt-6">Shop
+                        Here</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- DELICIOUS OFFER -->
+    <section id="offer">
+        <div class="container py-24">
+            <!-- section heading -->
+            <div class="w-1/2 text-center m-auto space-y-6">
+                <h1 class="text-3xl md:text-5xl text-[#BE9C79]">OUR DELICIOUS OFFER</h1>
+                <img src="images/title-separator.png" alt="" class="m-auto">
+                <p class="text-gray-600 text-lg leading-relaxed text-justify">Lorem ipsum dolor sit amet consectetur
+                    adipisicing
+                    elit. Culpa velit,
+                    minus alias laudantium saepe nam dolorum quas ea dolores labore repellat.</p>
+            </div>
+            <!-- section content -->
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 sm:space-y-4 gap-8 mt-16">
+                <!-- card 1 -->
+                <div class="flex flex-col items-center justify-center">
+                    <!-- card image -->
+                    <div>
+                        <img src="images/h2-custom-icon-5.png" alt="card-image">
+                    </div>
+                    <a href="#" class="text-xl text-gray-600 hover:text-orange-900 py-3">TYPES OF
+                        COFFEE</a>
+                    <p class="text-gray-600 leading-relaxed whitespace-normal text-center">Lorem ipsum dolor sit ametal,
+                        consectetuer
+                        adipiscing elitus. Aeneantos commodo
+                    </p>
+                </div>
+                <!-- card 2 -->
+                <div class="flex flex-col items-center justify-center">
+                    <!-- card image -->
+                    <div>
+                        <img src="images/h2-custom-icon-6.png" alt="card-image">
+                    </div>
+                    <a href="#" class="text-xl text-gray-600 hover:text-orange-900 py-3">BEAN VARIETIES</a>
+                    <p class="text-gray-600 leading-relaxed whitespace-normal text-center">Lorem ipsum dolor sit ametal,
+                        consectetuer
+                        adipiscing elitus. Aeneantos commodo
+                    </p>
+                </div>
+                <!-- card 3 -->
+                <div class="flex flex-col items-center justify-center">
+                    <!-- card image -->
+                    <div>
+                        <img src="images/h2-custom-icon-7.png" alt="card-image">
+                    </div>
+                    <a href="#" class="text-xl text-gray-600 hover:text-orange-900 py-3">COFFEE & PASTRY</a>
+                    <p class="text-gray-600 leading-relaxed whitespace-normal text-center">Lorem ipsum dolor sit ametal,
+                        consectetuer
+                        adipiscing elitus. Aeneantos commodo
+                    </p>
+                </div>
+                <!-- card 4 -->
+                <div class="flex flex-col items-center justify-center">
+                    <!-- card image -->
+                    <div>
+                        <img src="images/h2-custom-icon-8.png" alt="card-image">
+                    </div>
+                    <a href="#" class="text-xl text-gray-600 hover:text-orange-900 py-3">COFFEE TO GO</a>
+                    <p class="text-gray-600 leading-relaxed whitespace-normal text-center">Lorem ipsum dolor sit ametal,
+                        consectetuer
+                        adipiscing elitus. Aeneantos commodo
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- EXPLORE OUR MENU -->
+    <section id="coffee" class="min-h-screen flex justify-center items-center bg-fixed bg-no-repeat bg-cover"
+        style="background-image: url(images/h3-img-5.jpg);">
+        <div class="container py-24">
+            <!-- section heading -->
+            <div class="w-1/2 text-center m-auto space-y-6">
+                <h1 class="text-3xl md:text-5xl text-[#BE9C79]">EXPLORE OUR MENU</h1>
+                <img src="images/title-separator.png" alt="" class="m-auto">
+                <p class="text-white text-lg leading-relaxed text-justify">Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Culpa velit,
+                    minus alias laudantium saepe nam dolorum quas ea dolores labore repellat.</p>
+            </div>
+            <!-- section content -->
+            <div class="grid lg:grid-cols-2 grid-cols-1 items-center justify-center gap-8 mt-16">
+                <!-- Item 1 -->
+                <div class="flex items-center justify-between py-5 px-8 border-b border-gray-200">
+                    <img src="images/h2-custom-icon-1.png" alt="">
+                    <div>
+                        <h2 class="text-white font-medium text-lg">CAFE LATTE</h2>
+                        <p class="text-white">Fresh Brewed coffee and steamed milk</p>
+                    </div>
+                    <h3 class="text-white font-medium text-lg">$ 50</h3>
+                </div>
+                <!-- Item 2 -->
+                <div class="flex items-center justify-between py-5 px-8 border-b border-gray-200">
+                    <img src="images/h2-custom-icon-1.png" alt="">
+                    <div>
+                        <h2 class="text-white font-medium text-lg">CAFE LATTE PREMIUM</h2>
+                        <p class="text-white">Fresh Brewed coffee and steamed milk</p>
+                    </div>
+                    <h3 class="text-white font-medium text-lg">$ 150</h3>
+                </div>
+                <!-- Item 3 -->
+                <div class="flex items-center justify-between py-5 px-8 border-b border-gray-200">
+                    <img src="images/h2-custom-icon-2.png" alt="">
+                    <div>
+                        <h2 class="text-white font-medium text-lg">ICE COFFEE</h2>
+                        <p class="text-white">Fresh Brewed coffee and steamed milk</p>
+                    </div>
+                    <h3 class="text-white font-medium text-lg">$ 150</h3>
+                </div>
+                <!-- Item 4 -->
+                <div class="flex items-center justify-between py-5 px-8 border-b border-gray-200">
+                    <img src="images/h2-custom-icon-2.png" alt="">
+                    <div>
+                        <h2 class="text-white font-medium text-lg">ICE COFFEE PREMIUM</h2>
+                        <p class="text-white">Fresh Brewed coffee and steamed milk</p>
+                    </div>
+                    <h3 class="text-white font-medium text-lg">$ 250</h3>
+                </div>
+                <!-- Item 5 -->
+                <div class="flex items-center justify-between py-5 px-8 border-b border-gray-200">
+                    <img src="images/h2-custom-icon-3.png" alt="">
+                    <div>
+                        <h2 class="text-white font-medium text-lg">MOCHA</h2>
+                        <p class="text-white">Fresh Brewed coffee and steamed milk</p>
+                    </div>
+                    <h3 class="text-white font-medium text-lg">$ 50.00</h3>
+                </div>
+                <!-- Item 6 -->
+                <div class="flex items-center justify-between py-5 px-8 border-b border-gray-200">
+                    <img src="images/h2-custom-icon-3.png" alt="">
+                    <div>
+                        <h2 class="text-white font-medium text-lg">MOCHA PRO</h2>
+                        <p class="text-white">Fresh Brewed coffee and steamed milk</p>
+                    </div>
+                    <h3 class="text-white font-medium text-lg">$ 350</h3>
+                </div>
+                <!-- Item 7 -->
+                <div class="flex items-center justify-between py-5 px-8 border-b border-gray-200">
+                    <img src="images/h2-custom-icon-4.png" alt="">
+                    <div>
+                        <h2 class="text-white font-medium text-lg">ESPRESSO </h2>
+                        <p class="text-white">Fresh Brewed coffee and steamed milk</p>
+                    </div>
+                    <h3 class="text-white font-medium text-lg">$ 250</h3>
+                </div>
+                <!-- Item 8 -->
+                <div class="flex items-center justify-between py-5 px-8 border-b border-gray-200">
+                    <img src="images/h2-custom-icon-4.png" alt="">
+                    <div>
+                        <h2 class="text-white font-medium text-lg">ESPRESSO PREMIUM</h2>
+                        <p class="text-white">Fresh Brewed coffee and steamed milk</p>
+                    </div>
+                    <h3 class="text-white font-medium text-lg">$ 450</h3>
+                </div>
+                <!-- Item 9 -->
+                <div class="flex items-center justify-between py-5 px-8 border-b border-gray-200">
+                    <img src="images/h2-custom-icon-5-1.png" alt="">
+                    <div>
+                        <h2 class="text-white font-medium text-lg">AMERICANO</h2>
+                        <p class="text-white">Fresh Brewed coffee and steamed milk</p>
+                    </div>
+                    <h3 class="text-white font-medium text-lg">$ 150</h3>
+                </div>
+                <!-- Item 10 -->
+                <div class="flex items-center justify-between py-5 px-8 border-b border-gray-200">
+                    <img src="images/h2-custom-icon-5-1.png" alt="">
+                    <div>
+                        <h2 class="text-white font-medium text-lg">AMERICANO PREMIUM</h2>
+                        <p class="text-white">Fresh Brewed coffee and steamed milk</p>
+                    </div>
+                    <h3 class="text-white font-medium text-lg">$ 550</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- OUR LATEST BLOGS -->
+    <section id="blog" class="bg-cover bg-no-repeat bg-center"
+        style="background-image: url(images/new-new-h1-bacground-img-3.jpg);">
+        <div class="container py-32">
+            <!-- section heading -->
+            <div class="w-1/2 text-center m-auto space-y-6 mb-10">
+                <h1 class="text-3xl md:text-5xl text-[#BE9C79]">OUR LATEST BLOGS</h1>
+                <img src="images/title-separator.png" alt="" class="m-auto">
+                <p class="text-gray-600 text-lg leading-relaxed text-justify">Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Culpa velit,
+                    minus alias laudantium saepe nam dolorum quas ea dolores labore repellat.</p>
+            </div>
+            <!-- section content -->
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <!-- blog card 1 -->
+                <div>
+                    <div class="lg:h-[40vh] rounded-xl scale-100 overflow-hidden">
+                        <img src="images/blog-1-img-1.jpg" alt="blog"
+                            class="lg:h-full w-full hover:scale-125 transition duration-300 ease-in-out">
+                    </div>
+                    <div class="mt-5">
+                        <a href="#" class="text-xl font-bold hover:text-orange-900">PREP TECHNIQUES</a>
+                        <p class="leading-relaxed my-5">Quisque rutrum, aenean imperdiet. Etiam ultricies nisi vel
+                            augue. Curabitur ullamcorper ultricies nisi, nam eget dui. Etiam rhoncus maecenas tempus...
+                        </p>
+                        <a href="#"
+                            class="inline-block font-bold hover:text-orange-900 transition-all duration-300 ease-in-out">
+                            <span class="tracking-wider capitalize underline hover:no-underline">Read more</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- blog card 2 -->
+                <div>
+                    <div class="lg:h-[40vh] rounded-xl scale-100 overflow-hidden">
+                        <img src="images/blog-1-img-2.jpg" alt="blog"
+                            class="lg:h-full w-full hover:scale-125 transition duration-300 ease-in-out">
+                    </div>
+                    <div class="mt-5">
+                        <a href="#" class="text-xl font-bold hover:text-orange-900">PREP TECHNIQUES</a>
+                        <p class="leading-relaxed my-5">Quisque rutrum, aenean imperdiet. Etiam ultricies nisi vel
+                            augue. Curabitur ullamcorper ultricies nisi, nam eget dui. Etiam rhoncus maecenas tempus...
+                        </p>
+                        <a href="#"
+                            class="inline-block font-bold hover:text-orange-900 transition-all duration-300 ease-in-out">
+                            <span class="tracking-wider capitalize underline hover:no-underline">Read more</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- blog card 3 -->
+                <div>
+                    <div class="lg:h-[40vh] rounded-xl scale-100 overflow-hidden">
+                        <img src="images/blog-1-img-3.jpg" alt="blog"
+                            class="lg:h-full w-full hover:scale-125 transition duration-300 ease-in-out">
+                    </div>
+                    <div class="mt-5">
+                        <a href="#" class="text-xl font-bold hover:text-orange-900">PREP TECHNIQUES</a>
+                        <p class="leading-relaxed my-5">Quisque rutrum, aenean imperdiet. Etiam ultricies nisi vel
+                            augue. Curabitur ullamcorper ultricies nisi, nam eget dui. Etiam rhoncus maecenas tempus...
+                        </p>
+                        <a href="#"
+                            class="inline-block font-bold hover:text-orange-900 transition-all duration-300 ease-in-out">
+                            <span class="tracking-wider capitalize underline hover:no-underline">Read more</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tailwind Parallax scrolling effect -->
+    <div class="min-h-screen flex justify-center items-center bg-fixed bg-no-repeat bg-cover"
+        style="background-image: url(images/h1-bacground-img-2.jpg);">
+        <img src="images/h1-single-img-1-250x226.png" alt="">
+    </div>
+    <!-- Company Achievement -->
+    <section id="offer">
+        <div class="container py-16">
+            <!-- section content -->
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 sm:space-y-4 gap-8">
+                <!-- card 1 -->
+                <div class="flex flex-col items-center justify-center">
+                    <!-- card image -->
+                    <div>
+                        <h2 class="text-6xl text-[#BE9C79] font-bold">250</h2>
+                    </div>
+                    <a href="#" class="text-xl text-gray-600 hover:text-orange-900 py-3">VARIETIES OF COFFEE</a>
+                    <p class="text-gray-600 leading-relaxed whitespace-normal text-center">Lorem ipsum dolor sit ametal,
+                        consectetuer
+                        adipiscing elitus. Aeneantos commodo
+                    </p>
+                </div>
+                <!-- card 2 -->
+                <div class="flex flex-col items-center justify-center">
+                    <!-- card image -->
+                    <div>
+                        <h2 class="text-6xl text-[#BE9C79] font-bold">123</h2>
+                    </div>
+                    <a href="#" class="text-xl text-gray-600 hover:text-orange-900 py-3">HOURS OF TESTING</a>
+                    <p class="text-gray-600 leading-relaxed whitespace-normal text-center">Lorem ipsum dolor sit ametal,
+                        consectetuer
+                        adipiscing elitus. Aeneantos commodo
+                    </p>
+                </div>
+                <!-- card 3 -->
+                <div class="flex flex-col items-center justify-center">
+                    <!-- card image -->
+                    <div>
+                        <h2 class="text-6xl text-[#BE9C79] font-bold">321</h2>
+                    </div>
+                    <a href="#" class="text-xl text-gray-600 hover:text-orange-900 py-3">COFFEE MARKETS</a>
+                    <p class="text-gray-600 leading-relaxed whitespace-normal text-center">Lorem ipsum dolor sit ametal,
+                        consectetuer
+                        adipiscing elitus. Aeneantos commodo
+                    </p>
+                </div>
+                <!-- card 4 -->
+                <div class="flex flex-col items-center justify-center">
+                    <!-- card image -->
+                    <div>
+                        <h2 class="text-6xl text-[#BE9C79] font-bold">220</h2>
+                    </div>
+                    <a href="#" class="text-xl text-gray-600 hover:text-orange-900 py-3">COFFEE BRANDS</a>
+                    <p class="text-gray-600 leading-relaxed whitespace-normal text-center">Lorem ipsum dolor sit ametal,
+                        consectetuer
+                        adipiscing elitus. Aeneantos commodo
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ONLINE COFFEE SHOP -->
+    <section id="shop" class="bg-cover bg-no-repeat bg-center"
+        style="background-image: url(images/h1-bacground-img-1.jpg);">
+        <div class="container py-32">
+            <!-- section heading -->
+            <div class="w-1/2 text-center m-auto space-y-6">
+                <h1 class="text-3xl md:text-5xl text-[#BE9C79]">ONLINE COFFEE SHOP</h1>
+                <img src="images/title-separator.png" alt="" class="m-auto">
+                <p class="text-gray-600 text-lg leading-relaxed text-justify">Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Culpa velit,
+                    minus alias laudantium saepe nam dolorum quas ea dolores labore repellat.</p>
+            </div>
+            <!-- section content -->
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 sm:space-y-4 gap-8 mt-16">
+                <!-- card 1 -->
+                <div class="flex flex-col items-center justify-center relative overflow-hidden group">
+                    <!-- card image -->
+                    <img src="images/product-img-1.png" alt="product-image">
+                    <!-- Hover price -->
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100">
+                        <a href="#"
+                            class="py-5 px-12 bg-black border border-gray-200 text-lg text-white hover:bg-gray-300  flex items-center justify-center uppercase transition">Add
+                            To Cart</a>
+                    </div>
+                    <!-- product name & price -->
+                    <a href="#" class="text-xl text-gray-600 hover:text-orange-900 py-3">ETHIOPIA COFFEE</a>
+                    <p class="text-gray-600 leading-relaxed whitespace-normal text-center">$15.00</p>
+                </div>
+                <!-- card 2 -->
+                <div class="flex flex-col items-center justify-center relative overflow-hidden group">
+                    <!-- card image -->
+                    <img src="images/product-img-3.png" alt="product-image">
+                    <!-- Hover price -->
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100">
+                        <a href="#"
+                            class="py-5 px-12 bg-black border border-gray-200 text-lg text-white hover:bg-gray-300  flex items-center justify-center uppercase transition">Add
+                            To Cart</a>
+                    </div>
+                    <!-- product name & price -->
+                    <a href="#" class="text-xl text-gray-600 hover:text-orange-900 py-3">KENYA COFFEE</a>
+                    <p class="text-gray-600 leading-relaxed whitespace-normal text-center">$18.00</p>
+                </div>
+                <!-- card 3 -->
+                <div class="flex flex-col items-center justify-center relative overflow-hidden group">
+                    <!-- card image -->
+                    <img src="images/product-img-5.png" alt="product-image">
+                    <!-- Hover price -->
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100">
+                        <a href="#"
+                            class="py-5 px-12 bg-black border border-gray-200 text-lg text-white hover:bg-gray-300  flex items-center justify-center uppercase transition">Add
+                            To Cart</a>
+                    </div>
+                    <!-- product name & price -->
+                    <a href="#" class="text-xl text-gray-600 hover:text-orange-900 py-3">COLUMBIA COFFEE</a>
+                    <p class="text-gray-600 leading-relaxed whitespace-normal text-center">$25.00</p>
+                </div>
+                <!-- card 4 -->
+                <div class="flex flex-col items-center justify-center relative overflow-hidden group">
+                    <!-- card image -->
+                    <img src="images/product-img-8.png" alt="product-image">
+                    <!-- Hover price -->
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100">
+                        <a href="#"
+                            class="py-5 px-12 bg-black border border-gray-200 text-lg text-white hover:bg-gray-300  flex items-center justify-center uppercase transition">Add
+                            To Cart</a>
+                    </div>
+                    <!-- product name & price -->
+                    <a href="#" class="text-xl text-gray-600 hover:text-orange-900 py-3">GUATEMALA COFFEE</a>
+                    <p class="text-gray-600 leading-relaxed whitespace-normal text-center">$30.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- GALLERY -->
+    <section id="gallery">
+        <div class="container py-24">
+            <!-- section heading -->
+            <div class="w-1/2 text-center m-auto space-y-6">
+                <h1 class="text-3xl md:text-5xl text-[#BE9C79]">OUR SWEET GALLERY</h1>
+                <img src="images/title-separator.png" alt="" class="m-auto">
+                <p class="text-gray-600 text-lg leading-relaxed text-justify">Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Culpa velit,
+                    minus alias laudantium saepe nam dolorum quas ea dolores labore repellat.</p>
+            </div>
+        </div>
+        <!-- section content -->
+        <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 gap-6">
+            <!-- 1 -->
+            <div class="relative rounded-sm overflow-hidden group">
+                <img src="images/port-1-img-1.jpg" alt="" class="w-full">
+                <div
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center flex-col gap-2 opacity-0 group-hover:opacity-100">
+                    <a href="#"
+                        class="bg-opacity-40 flex items-center justify-center text-3xl text-white uppercase font-semibold group-hover:bg-opacity-50 transition duration-200 ">Perfect
+                        Cup
+                    </a>
+                    <p class="text-base text-white">Cup of Coffee / Filtered</p>
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="relative rounded-sm overflow-hidden group">
+                <img src="images/port-1-img-2.jpg" alt="" class="w-full">
+                <div
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center flex-col gap-2 opacity-0 group-hover:opacity-100">
+                    <a href="#"
+                        class="bg-opacity-40 flex items-center justify-center text-3xl text-white uppercase font-semibold group-hover:bg-opacity-50 transition duration-200 ">Brewed
+                    </a>
+                    <p class="text-base text-white">Cup of Coffee / Filtered</p>
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="relative rounded-sm overflow-hidden group">
+                <img src="images/port-1-img-3.jpg" alt="" class="w-full">
+                <div
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center flex-col gap-2 opacity-0 group-hover:opacity-100">
+                    <a href="#"
+                        class="bg-opacity-40 flex items-center justify-center text-3xl text-white uppercase font-semibold group-hover:bg-opacity-50 transition duration-200 ">Drips
+                    </a>
+                    <p class="text-base text-white">Cup of Coffee / Filtered</p>
+                </div>
+            </div>
+            <!-- 4 -->
+            <div class="relative rounded-sm overflow-hidden group">
+                <img src="images/port-1-img-4.jpg" alt="" class="w-full">
+                <div
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center flex-col gap-2 opacity-0 group-hover:opacity-100">
+                    <a href="#"
+                        class="bg-opacity-40 flex items-center justify-center text-3xl text-white uppercase font-semibold group-hover:bg-opacity-50 transition duration-200 ">Baked
+                        Beans
+                    </a>
+                    <p class="text-base text-white">Cup of Coffee / Filtered</p>
+                </div>
+            </div>
+            <!-- 5 -->
+            <div class="relative rounded-sm overflow-hidden group">
+                <img src="images/port-1-img-5.jpg" alt="" class="w-full">
+                <div
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center flex-col gap-2 opacity-0 group-hover:opacity-100">
+                    <a href="#"
+                        class="bg-opacity-40 flex items-center justify-center text-3xl text-white uppercase font-semibold group-hover:bg-opacity-50 transition duration-200 ">Best
+                        Aromas
+                    </a>
+                    <p class="text-base text-white">Cup of Coffee / Filtered</p>
+                </div>
+            </div>
+            <!-- 6 -->
+            <div class="relative rounded-sm overflow-hidden group">
+                <img src="images/port-1-img-6.jpg" alt="" class="w-full">
+                <div
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center flex-col gap-2 opacity-0 group-hover:opacity-100">
+                    <a href="#"
+                        class="bg-opacity-40 flex items-center justify-center text-3xl text-white uppercase font-semibold group-hover:bg-opacity-50 transition duration-200 ">Creams
+                    </a>
+                    <p class="text-base text-white">Cup of Coffee / Filtered</p>
+                </div>
+            </div>
+            <!-- 7 -->
+            <div class="relative rounded-sm overflow-hidden group">
+                <img src="images/port-1-img-7.jpg" alt="" class="w-full">
+                <div
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center flex-col gap-2 opacity-0 group-hover:opacity-100">
+                    <a href="#"
+                        class="bg-opacity-40 flex items-center justify-center text-3xl text-white uppercase font-semibold group-hover:bg-opacity-50 transition duration-200 ">Enjoyment
+                    </a>
+                    <p class="text-base text-white">Cup of Coffee / Filtered</p>
+                </div>
+            </div>
+            <!-- 8 -->
+            <div class="relative rounded-sm overflow-hidden group">
+                <img src="images/port-1-img-8.jpg" alt="" class="w-full">
+                <div
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center flex-col gap-2 opacity-0 group-hover:opacity-100">
+                    <a href="#"
+                        class="bg-opacity-40 flex items-center justify-center text-3xl text-white uppercase font-semibold group-hover:bg-opacity-50 transition duration-200 ">Big
+                        Mugs
+                    </a>
+                    <p class="text-base text-white">Cup of Coffee / Filtered</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container py-32">
+            <!-- section heading -->
+            <div class="w-1/2 text-center m-auto space-y-6">
+                <h1 class="text-3xl md:text-5xl text-[#BE9C79]">CONTACT US</h1>
+                <img src="images/title-separator.png" alt="" class="m-auto">
+                <p class="text-gray-600 text-lg leading-relaxed text-justify">Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Culpa velit,
+                    minus alias laudantium saepe nam dolorum quas ea dolores labore repellat.</p>
+            </div>
+            <!-- section content -->
+            <form class="mt-16">
+                <div class="w-full m-auto text-center md:w-2/3">
+                    <div class="text-yellow-800 grid gap-6 mb-6 md:grid-cols-2">
+                        <input type="text"
+                            class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-yellow-600"
+                            placeholder="Name">
+                        <input type="email"
+                            class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-yellow-600"
+                            placeholder="Email">
+                        <input type="text"
+                            class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-yellow-600"
+                            placeholder="Phone">
+                        <input type="text"
+                            class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-yellow-600"
+                            placeholder="Company">
+                    </div>
+                    <!-- text area -->
+                    <textarea rows="4"
+                        class="text-yellow-800 bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-yellow-800"
+                        placeholder="Message"></textarea>
+                    <!-- send button -->
+                    <button
+                        class="w-full px-9 py-3 bg-yellow-900 text-white  rounded-md capitalize font-bold hover:bg-yellow-800 ease-in duration-200 mt-5">Send
+                        Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- CLIENTS -->
+    <section id="clients">
+        <div class="container py-24">
+            <div class="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-1 gap-5">
+                <!-- Client 1 -->
+                <div class="relative rounded-sm overflow-hidden group items-center justify-center">
+                    <img src="images/clients-img-1-1.png" alt="clients-logo">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <a href="#"
+                            class="flex items-center justify-center group-hover:bg-opacity-50 transition duration-200 ">
+                            <img src="images/clients-img-1.png" alt="clients-logo">
+                        </a>
+                    </div>
+                </div>
+                <!-- Client 2 -->
+                <div class="relative rounded-sm overflow-hidden group">
+                    <img src="images/clients-img-2.png" alt="clients-logo">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <a href="#"
+                            class="flex items-center justify-center group-hover:bg-opacity-50 transition duration-200 ">
+                            <img src="images/clients-img-2-hover.png" alt="clients-logo">
+                        </a>
+                    </div>
+                </div>
+                <!-- Client 3 -->
+                <div class="relative rounded-sm overflow-hidden group">
+                    <img src="images/clients-img-3.png" alt="clients-logo">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <a href="#"
+                            class="flex items-center justify-center group-hover:bg-opacity-50 transition duration-200 ">
+                            <img src="images/clients-img-3-hover.png" alt="clients-logo">
+                        </a>
+                    </div>
+                </div>
+                <!-- Client 4 -->
+                <div class="relative rounded-sm overflow-hidden group">
+                    <img src="images/clients-img-4.png" alt="clients-logo">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <a href="#"
+                            class="flex items-center justify-center group-hover:bg-opacity-50 transition duration-200 ">
+                            <img src="images/clients-img-4-hover.png" alt="clients-logo">
+                        </a>
+                    </div>
+                </div>
+                <!-- Client 5 -->
+                <div class="relative rounded-sm overflow-hidden group">
+                    <img src="images/clients-img-5.png" alt="clients-logo">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <a href="#"
+                            class="flex items-center justify-center group-hover:bg-opacity-50 transition duration-200 ">
+                            <img src="images/clients-img-5-hover.png" alt="clients-logo">
+                        </a>
+                    </div>
+                </div>
+                <!-- Client 6 -->
+                <div class="relative rounded-sm overflow-hidden group">
+                    <img src="images/clients-img-6.png" alt="clients-logo">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <a href="#"
+                            class="flex items-center justify-center group-hover:bg-opacity-50 transition duration-200 ">
+                            <img src="images/clients-img-6-hover.png" alt="clients-logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CTA -->
+    <section id="cta" class="bg-cover bg-no-repeat bg-center lg:block hidden"
+        style="background-image: url(images/p2-background-img-1.jpg);">
+        <!-- container -->
+        <div class="container py-16 flex items-center justify-center">
+            <div class="flex items-center justify-between space-x-8">
+                <h2 class="text-xl text-orange-950 uppercase">Lorem ipsum dolor sit amet consectetur adipisicing elit
+                    Excepturi.</h2>
+                <a href="#"
+                    class="py-5 px-12 bg-yellow-900 border border-yellow-800 text-lg text-white hover:bg-black uppercase">Contact
+                    us</a>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer id="footer" class="bg-cover bg-no-repeat bg-center"
+        style="background-image: url(images/footer-top-img-1.jpg);">
+        <div class="">
+            <div class="container py-20">
+                <div class="grid md:grid-cols-3 gap-10 pb-10">
+                    <!-- Left footer content-->
+                    <div class="space-y-6">
+                        <!-- Logo -->
+                        <a href="#" class="">
+                            <img src="images/logo-light.png" alt="logo" class="w-auto h-16">
+                        </a>
+                        <p class="leading-relaxed text-white">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Ipsum
+                            ab id nesciunt nulla. Sunt eveniet dolorum quasi! Aut, quidem in?</p>
+                        <!-- social icons -->
+                        <div class="flex items-center gap-5">
+                            <p class="text-white">Follow Us</p>
+                            <i
+                                class="fa-brands fa-facebook-square cursor-pointer hover:text-orange-900 text-2xl text-white"></i>
+                            <i
+                                class="fa-brands fa-twitter-square cursor-pointer hover:text-orange-900 text-2xl text-white"></i>
+                            <i
+                                class="fa-brands fa-instagram-square cursor-pointer hover:text-orange-900 text-2xl text-white"></i>
+                            <i
+                                class="fa-brands fa-youtube-square cursor-pointer hover:text-orange-900 text-2xl text-white"></i>
+                        </div>
+                    </div>
+                    <!-- Middle footer Content -->
+                    <div class="flex justify-between md:justify-around">
+                        <!-- quick link 1 -->
+                        <div class="space-y-6">
+                            <h4 class="text-lg font-bold text-white">Quick Links</h4>
+                            <ul class="space-y-3">
+                                <li class="text-white underline hover:no-underline hover:text-yellow-900"><a
+                                        href="#">Home</a></li>
+                                <li class="text-white underline hover:no-underline hover:text-yellow-900"><a
+                                        href="#">Blog</a></li>
+                                <li class="text-white underline hover:no-underline hover:text-yellow-900"><a
+                                        href="#">Coffee</a>
+                                </li>
+                                <li class="text-white underline hover:no-underline hover:text-yellow-900"><a
+                                        href="#">Snacks</a>
+                                </li>
+                                <li class="text-white underline hover:no-underline hover:text-yellow-900"><a
+                                        href="#">Dinner</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- quick link 2 -->
+                        <div class="space-y-6">
+                            <h4 class="text-lg font-bold text-white">Coffee Shop</h4>
+                            <ul class="space-y-3">
+                                <li class="text-white underline hover:no-underline hover:text-yellow-900"><a
+                                        href="#">Enjoyment</a></li>
+                                <li class="text-white underline hover:no-underline hover:text-yellow-900"><a
+                                        href="#">Big Mugs</a></li>
+                                <li class="text-white underline hover:no-underline hover:text-yellow-900"><a
+                                        href="#">Cream Coffee</a>
+                                </li>
+                                <li class="text-white underline hover:no-underline hover:text-yellow-900"><a
+                                        href="#">Baked Beans</a>
+                                </li>
+                                <li class="text-white underline hover:no-underline hover:text-yellow-900"><a
+                                        href="#">Perfect Cups</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Right footer Content -->
+                    <div class="space-y-6">
+                        <h4 class="text-white text-xl font-bold">Newsletter</h4>
+                        <div>
+                            <p class="text-white leading-relaxed">Location : Dhanmondi Shukrabad Dhaka 1207</p>
+                            <p class="text-white leading-relaxed">Email: example@email.com</p>
+                            <p class="text-white leading-relaxed">Phone: 01710 - 000000</p>
+                        </div>
+                        <!-- Input Form -->
+                        <div class="flex items-center">
+                            <input type="text"
+                                class="w-3/4 text-color-gray bg-color-white p-2 lg:p-3 rounder-l-md focus:outline-none"
+                                placeholder="Subscribe By Email For Updates">
+                            <button type="submit"
+                                class="bg-yellow-900 px-4 py-2 lg:px-5 lg:py-3 rounded-r-md hover:opacity-90">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Copyright -->
+                <div class="flex justify-between pt-10 border-t border-yellow-900">
+                    <div>
+                        <p class="text-white">2023 &copy; Corretto all right Reserved.</p>
+                    </div>
+                    <div>
+                        <p class="text-white">Developed By <a href="https://shuvo616dev.netlify.app/"
+                                class="text-yellow-800 text-xl font-bold hover:text-yellow-900">Shuvo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="./script.js"></script>
+</body>
+
+</html>
